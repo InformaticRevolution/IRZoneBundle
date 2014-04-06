@@ -5,13 +5,13 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   
     <parameters>
-        <parameter key="ir_zone.manager.region.class">IR\Bundle\ZoneBundle\Doctrine\RegionManager</parameter>
+        <parameter key="ir_zone.manager.province.class">IR\Bundle\ZoneBundle\Doctrine\ProvinceManager</parameter>
     </parameters>
 
     <services>        
-        <service id="ir_zone.manager.region.default" class="%ir_zone.manager.region.class%" public="false">
+        <service id="ir_zone.manager.province.default" class="%ir_zone.manager.province.class%" public="false">
             <argument type="service" id="ir_zone.entity_manager" />
-            <argument>%ir_zone.model.region.class%</argument>
+            <argument>%ir_zone.model.province.class%</argument>
         </service>          
     </services>  
 

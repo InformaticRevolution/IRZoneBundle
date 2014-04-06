@@ -12,11 +12,11 @@
 namespace IR\Bundle\ZoneBundle\Model;
 
 /**
- * Abstract Region implementation.
+ * Abstract Province implementation.
  *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-abstract class Region implements RegionInterface
+abstract class Province implements ProvinceInterface
 {
     /**
      * @var mixed
@@ -138,7 +138,7 @@ abstract class Region implements RegionInterface
     }    
     
     /**
-     * Returns the region name.
+     * Returns the province name.
      *
      * @return string
      */         

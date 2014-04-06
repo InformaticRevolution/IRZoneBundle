@@ -11,13 +11,13 @@
 
 namespace IR\Bundle\ZoneBundle\Tests;
 
-use IR\Bundle\ZoneBundle\Model\Region;
+use IR\Bundle\ZoneBundle\Model\Province;
 
 /**
- * Test Region.
+ * Test Province.
  *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-class TestRegion extends Region
+class TestProvince extends Province
 {
 }

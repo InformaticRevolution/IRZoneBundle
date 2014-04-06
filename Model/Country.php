@@ -44,7 +44,7 @@ abstract class Country implements CountryInterface
     /**
      * @var Collection
      */
-    protected $regions;    
+    protected $provinces;    
     
     /**
      * @var Boolean
@@ -57,7 +57,7 @@ abstract class Country implements CountryInterface
      */    
     public function __construct() 
     {        
-        $this->regions = new ArrayCollection();
+        $this->provinces = new ArrayCollection();
     }     
     
     /**
@@ -119,38 +119,38 @@ abstract class Country implements CountryInterface
     /**
      * {@inheritdoc}
      */
-    public function getRegions()
+    public function getProvinces()
     {
-        return $this->regions;
+        return $this->provinces;
     }
     
     /**
      * {@inheritdoc}
      */
-    public function addRegion(RegionInterface $region)
+    public function addProvince(ProvinceInterface $province)
     {
-        if (!$this->hasRegion($region)) {
-            $region->setCountry($this);
-            $this->regions->add($region);
+        if (!$this->hasProvince($province)) {
+            $province->setCountry($this);
+            $this->provinces->add($province);
         }
     }
     
     /**
      * {@inheritdoc}
      */
-    public function removeRegion(RegionInterface $region)
+    public function removeProvince(ProvinceInterface $province)
     {
-        if ($this->regions->removeElement($region)) {
-            $region->setCountry(null);
+        if ($this->provinces->removeElement($province)) {
+            $province->setCountry(null);
         }        
     }
     
     /**
      * {@inheritdoc}
      */
-    public function hasRegion(RegionInterface $region)
+    public function hasProvince(ProvinceInterface $province)
     {
-        return $this->regions->contains($region);
+        return $this->provinces->contains($province);
     }
     
     /**

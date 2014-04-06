@@ -1,10 +1,10 @@
 db_driver: orm
 zone_class: Acme\ZoneBundle\Entity\Zone
 country_class: Acme\ZoneBundle\Entity\Country
-region_class: Acme\ZoneBundle\Entity\Region
+province_class: Acme\ZoneBundle\Entity\Province
 zone_manager: acme_zone.manager.zone
 country_manager: acme_zone.manager.country
-region_manager: acme_zone.manager.region
+province_manager: acme_zone.manager.province
 zone:
     form:
         type: acme_zone
@@ -15,10 +15,10 @@ country:
         type: acme_zone_country
         name: acme_zone_country_form
         validation_groups: [acme_country]
-region:
+province:
     form:
-        type: acme_zone_region
-        name: acme_zone_region_form
-        validation_groups: [acme_region]        
+        type: acme_zone_province
+        name: acme_zone_province_form
+        validation_groups: [acme_province]        
 template:
     engine: php        

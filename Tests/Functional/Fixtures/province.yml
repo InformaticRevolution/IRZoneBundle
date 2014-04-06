@@ -7,10 +7,10 @@ IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Country:
         name: <country()>
         isoCode: <countryCode()>
         zone: @zone1        
-        regions: ["@region1", "@region2", "@region3"]
+        provinces: ["@province1", "@province2", "@province3"]
         
-IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Region (local):
-    region{1..3}:
+IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Province (local):
+    province{1..3}:
         name: <state()>
         code: <stateAbbr()>
         zone: @zone2

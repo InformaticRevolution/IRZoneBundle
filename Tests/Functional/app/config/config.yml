@@ -35,4 +35,4 @@ ir_zone:
     db_driver: orm 
     zone_class: IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Zone 
     country_class: IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Country 
-    region_class: IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Region 
+    province_class: IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Province 

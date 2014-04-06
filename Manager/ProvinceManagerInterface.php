@@ -11,36 +11,36 @@
 
 namespace IR\Bundle\ZoneBundle\Manager;
 
-use IR\Bundle\ZoneBundle\Model\RegionInterface;
 use IR\Bundle\ZoneBundle\Model\CountryInterface;
+use IR\Bundle\ZoneBundle\Model\ProvinceInterface;
 
 /**
- * Region Manager Interface.
+ * Province Manager Interface.
  * 
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-interface RegionManagerInterface 
+interface ProvinceManagerInterface 
 {
     /**
-     * Creates an empty region instance.
+     * Creates an empty province instance.
      *
      * @param CountryInterface|null $country
      * 
-     * @return RegionInterface
+     * @return ProvinceInterface
      */
-    public function createRegion(CountryInterface $country = null);    
+    public function createProvince(CountryInterface $country = null);    
 
     /**
-     * Finds a region by the given criteria.
+     * Finds a province by the given criteria.
      *
      * @param array $criteria
      *
-     * @return RegionInterface|null
+     * @return ProvinceInterface|null
      */
-    public function findRegionBy(array $criteria);      
+    public function findProvinceBy(array $criteria);      
 
     /**
-     * Returns the region's fully qualified class name.
+     * Returns the province's fully qualified class name.
      *
      * @return string
      */

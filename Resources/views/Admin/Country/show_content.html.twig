@@ -40,39 +40,39 @@
     </table>
 </div>
 
-<!-- REGIONS -->
+<!-- PROVINCES -->
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <a href="{{ path('ir_zone_admin_region_new', {'countryId': country.id}) }}" class="btn btn-default">
-            <i class="glyphicon glyphicon-plus-sign"></i> {{ 'ir_zone.admin.region.action.new'|trans }}
+        <a href="{{ path('ir_zone_admin_province_new', {'countryId': country.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-plus-sign"></i> {{ 'ir_zone.admin.province.action.new'|trans }}
         </a>     
     </div>
     
-    {% if country.regions|length %}
-    <table class="table regions">
+    {% if country.provinces|length %}
+    <table class="table provinces">
         <thead>
             <tr>
-                <th>{{ 'ir_zone.admin.region.name'|trans }}</th>
-                <th>{{ 'ir_zone.admin.region.code'|trans }}</th>
-                <th>{{ 'ir_zone.admin.region.enabled'|trans }}</th>
+                <th>{{ 'ir_zone.admin.province.name'|trans }}</th>
+                <th>{{ 'ir_zone.admin.province.code'|trans }}</th>
+                <th>{{ 'ir_zone.admin.province.enabled'|trans }}</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-        {% for region in country.regions %}
+        {% for province in country.provinces %}
             <tr>
-                <td>{{ region.name }}</td>
-                <td>{{ region.code }}</td>
+                <td>{{ province.name }}</td>
+                <td>{{ province.code }}</td>
                 <td>
-                    <i class="glyphicon glyphicon-{% if region.enabled %}ok{% else %}remove{% endif %}"></i>
+                    <i class="glyphicon glyphicon-{% if province.enabled %}ok{% else %}remove{% endif %}"></i>
                 </td>
                 <td>
                     <div class="pull-right">                            
-                        <a href="{{ path('ir_zone_admin_region_edit', {'countryId': country.id, 'id': region.id}) }}" class="btn btn-sm btn-primary">
+                        <a href="{{ path('ir_zone_admin_province_edit', {'countryId': country.id, 'id': province.id}) }}" class="btn btn-sm btn-primary">
                             <i class="glyphicon glyphicon-edit"></i>
                         </a>
-                        <a href="{{ path('ir_zone_admin_region_delete', {'countryId': country.id, 'id': region.id}) }}" class="btn btn-sm btn-danger">
+                        <a href="{{ path('ir_zone_admin_province_delete', {'countryId': country.id, 'id': province.id}) }}" class="btn btn-sm btn-danger">
                             <i class="glyphicon glyphicon-trash"></i>
                         </a>  
                     </div>       
@@ -83,13 +83,13 @@
     </table>            
     {% else %}
     <div class="panel-body">
-        {{ 'ir_zone.admin.region.list.no_results'|trans }}
+        {{ 'ir_zone.admin.province.list.no_results'|trans }}
     </div>
     {% endif %}            
     
      <div class="panel-footer">
-        <a href="{{ path('ir_zone_admin_region_new', {'countryId': country.id}) }}" class="btn btn-default">
-            <i class="glyphicon glyphicon-plus-sign"></i> {{ 'ir_zone.admin.region.action.new'|trans }}
+        <a href="{{ path('ir_zone_admin_province_new', {'countryId': country.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-plus-sign"></i> {{ 'ir_zone.admin.province.action.new'|trans }}
         </a>     
     </div>
 </div>

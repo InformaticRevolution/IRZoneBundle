@@ -48,15 +48,15 @@ class Configuration implements ConfigurationInterface
                 ->end()  
                 ->scalarNode('zone_class')->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('country_class')->isRequired()->cannotBeEmpty()->end()
-                ->scalarNode('region_class')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('province_class')->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('zone_manager')->defaultValue('ir_zone.manager.zone.default')->end()
                 ->scalarNode('country_manager')->defaultValue('ir_zone.manager.country.default')->end()
-                ->scalarNode('region_manager')->defaultValue('ir_zone.manager.region.default')->end()
+                ->scalarNode('province_manager')->defaultValue('ir_zone.manager.province.default')->end()
             ->end();        
         
         $this->addZoneSection($rootNode);
         $this->addCountrySection($rootNode);
-        $this->addRegionSection($rootNode);
+        $this->addProvinceSection($rootNode);
         $this->addTemplateSection($rootNode);
         
         return $treeBuilder;
@@ -110,22 +110,22 @@ class Configuration implements ConfigurationInterface
             ->end();
     } 
     
-    private function addRegionSection(ArrayNodeDefinition $node)
+    private function addProvinceSection(ArrayNodeDefinition $node)
     {
         $node
             ->children()
-                ->arrayNode('region')
+                ->arrayNode('province')
                     ->addDefaultsIfNotSet()
                     ->canBeUnset()
                     ->children()
                         ->arrayNode('form')
                             ->addDefaultsIfNotSet()
                             ->children()
-                                ->scalarNode('type')->defaultValue('ir_zone_region')->end()
-                                ->scalarNode('name')->defaultValue('ir_zone_region_form')->end()
+                                ->scalarNode('type')->defaultValue('ir_zone_province')->end()
+                                ->scalarNode('name')->defaultValue('ir_zone_province_form')->end()
                                 ->arrayNode('validation_groups')
                                     ->prototype('scalar')->end()
-                                    ->defaultValue(array('Region', 'Default'))
+                                    ->defaultValue(array('Province', 'Default'))
                                 ->end()                
                             ->end()
                         ->end()

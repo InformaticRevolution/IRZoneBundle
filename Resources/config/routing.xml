@@ -8,5 +8,5 @@
     
     <import resource="@IRZoneBundle/Resources/config/routing/admin/country.xml" prefix="/countries" />
     
-    <import resource="@IRZoneBundle/Resources/config/routing/admin/region.xml" prefix="/countries/{countryId}/regions" />
+    <import resource="@IRZoneBundle/Resources/config/routing/admin/province.xml" prefix="/countries/{countryId}/provinces" />
 </routes>

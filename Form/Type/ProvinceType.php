@@ -16,11 +16,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
- * Region Type.
+ * Province Type.
  *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-class RegionType extends AbstractType
+class ProvinceType extends AbstractType
 {
     /**
      * @var string
@@ -45,16 +45,16 @@ class RegionType extends AbstractType
     {
         $builder           
             ->add('name', null, array(                 
-                'label' => 'ir_zone.form.region.name'
+                'label' => 'ir_zone.form.province.name'
             )) 
             ->add('code', null, array(                 
-                'label' => 'ir_zone.form.region.code'
+                'label' => 'ir_zone.form.province.code'
             ))         
             ->add('zone', 'ir_zone_choice', array(                 
-                'label' => 'ir_zone.form.region.zone'
+                'label' => 'ir_zone.form.province.zone'
             ))                 
             ->add('enabled', null, array(                 
-                'label' => 'ir_zone.form.region.enabled'
+                'label' => 'ir_zone.form.province.enabled'
             ));
     }
 
@@ -65,7 +65,7 @@ class RegionType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => $this->class,
-            'intention' => 'region',
+            'intention' => 'province',
         ));        
     }       
     
@@ -74,6 +74,6 @@ class RegionType extends AbstractType
      */    
     public function getName()
     {
-        return 'ir_zone_region';
+        return 'ir_zone_province';
     }    
 }

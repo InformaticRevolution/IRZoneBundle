@@ -70,34 +70,34 @@ interface CountryInterface
     public function setZone(ZoneInterface $zone);
 
     /**
-     * Returns all the regions.
+     * Returns all the provinces.
      *
      * @return Collection
      */
-    public function getRegions(); 
+    public function getProvinces(); 
     
     /**
-     * Adds a region.
+     * Adds a province.
      *
-     * @param RegionInterface $region
+     * @param ProvinceInterface $province
      */
-    public function addRegion(RegionInterface $region);
+    public function addProvince(ProvinceInterface $province);
     
     /**
-     * Removes a region.
+     * Removes a province.
      *
-     * @param RegionInterface $region
+     * @param ProvinceInterface $province
      */
-    public function removeRegion(RegionInterface $region);    
+    public function removeProvince(ProvinceInterface $province);    
     
     /**
-     * Checks whether country has given region.
+     * Checks whether country has given province.
      *
-     * @param RegionInterface $region
+     * @param ProvinceInterface $province
      *
      * @return Boolean
      */
-    public function hasRegion(RegionInterface $region);    
+    public function hasProvince(ProvinceInterface $province);    
     
     /**
      * Checks whether the country is enabled.

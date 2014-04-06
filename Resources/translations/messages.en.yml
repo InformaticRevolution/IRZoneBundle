@@ -52,25 +52,25 @@ ir_zone:
                 updated: The country has been successfully updated
                 deleted: The country has been successfully deleted 
                 
-        region: 
+        province: 
             name: Name
             code: Code
             enabled: Enabled
 
             list:
-                no_results: You haven't added any regions yet.       
+                no_results: You haven't added any provinces yet.       
             new:
-                title: Add a region
+                title: Add a province
                 save: Save
             edit:
-                title: Edit a region
+                title: Edit a province
                 save: Save
             action: 
-                new: Add a region           
+                new: Add a province           
             flash:
-                created: The region has been successfully created
-                updated: The region has been successfully updated
-                deleted: The region has been successfully deleted                 
+                created: The province has been successfully created
+                updated: The province has been successfully updated
+                deleted: The province has been successfully deleted                 
             
     # Form field labels
     form:  
@@ -82,7 +82,7 @@ ir_zone:
             iso_code: ISO code
             zone: Zone
             enabled: Enabled
-        region:
+        province:
             name: Name
             code: Code
             zone: Zone

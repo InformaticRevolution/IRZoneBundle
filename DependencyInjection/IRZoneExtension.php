@@ -33,7 +33,7 @@ class IRZoneExtension extends Extension
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config')); 
         
-        foreach (array('zone', 'country', 'region') as $basename) {
+        foreach (array('zone', 'country', 'province') as $basename) {
             $loader->load(sprintf('driver/%s/%s.xml', $config['db_driver'], $basename));
         }
         
@@ -42,13 +42,13 @@ class IRZoneExtension extends Extension
         $container->setParameter('ir_zone.db_driver', $config['db_driver']);
         $container->setParameter('ir_zone.model.zone.class', $config['zone_class']);
         $container->setParameter('ir_zone.model.country.class', $config['country_class']);
-        $container->setParameter('ir_zone.model.region.class', $config['region_class']);
+        $container->setParameter('ir_zone.model.province.class', $config['province_class']);
         $container->setParameter('ir_zone.template.engine', $config['template']['engine']);
         $container->setParameter('ir_zone.backend_type_' . $config['db_driver'], true);
         
         $container->setAlias('ir_zone.manager.zone', $config['zone_manager']);
         $container->setAlias('ir_zone.manager.country', $config['country_manager']);
-        $container->setAlias('ir_zone.manager.region', $config['region_manager']);
+        $container->setAlias('ir_zone.manager.province', $config['province_manager']);
 
         if (!empty($config['zone'])) {
             $this->loadZone($config['zone'], $container, $loader);
@@ -58,8 +58,8 @@ class IRZoneExtension extends Extension
             $this->loadCountry($config['country'], $container, $loader);
         }  
         
-        if (!empty($config['region'])) {
-            $this->loadRegion($config['region'], $container, $loader);
+        if (!empty($config['province'])) {
+            $this->loadProvince($config['province'], $container, $loader);
         }          
     }    
 
@@ -81,12 +81,12 @@ class IRZoneExtension extends Extension
         $container->setParameter('ir_zone.form.validation_groups.country', $config['form']['validation_groups']);
     }   
     
-    private function loadRegion(array $config, ContainerBuilder $container, XmlFileLoader $loader)
+    private function loadProvince(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {        
-        $loader->load('region.xml');
+        $loader->load('province.xml');
         
-        $container->setParameter('ir_zone.form.name.region', $config['form']['name']);
-        $container->setParameter('ir_zone.form.type.region', $config['form']['type']);
-        $container->setParameter('ir_zone.form.validation_groups.region', $config['form']['validation_groups']);
+        $container->setParameter('ir_zone.form.name.province', $config['form']['name']);
+        $container->setParameter('ir_zone.form.type.province', $config['form']['type']);
+        $container->setParameter('ir_zone.form.validation_groups.province', $config['form']['validation_groups']);
     }       
 }

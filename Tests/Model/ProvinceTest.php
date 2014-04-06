@@ -11,23 +11,23 @@
 
 namespace IR\Bundle\ZoneBundle\Tests\Model;
 
-use IR\Bundle\ZoneBundle\Model\RegionInterface;
 use IR\Bundle\ZoneBundle\Model\CountryInterface;
+use IR\Bundle\ZoneBundle\Model\ProvinceInterface;
 
 /**
- * Region Test.
+ * Province Test.
  *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-class RegionTest extends \PHPUnit_Framework_TestCase
+class ProvinceTest extends \PHPUnit_Framework_TestCase
 {
     public function testEnabled()
     {
-        $region = $this->getRegion();
+        $province = $this->getProvince();
         
-        $this->assertTrue($region->isEnabled());
-        $region->setEnabled(false);
-        $this->assertFalse($region->isEnabled());
+        $this->assertTrue($province->isEnabled());
+        $province->setEnabled(false);
+        $this->assertFalse($province->isEnabled());
     }
     
     /**
@@ -38,11 +38,11 @@ class RegionTest extends \PHPUnit_Framework_TestCase
         $getter = 'get'.$property;
         $setter = 'set'.$property;
         
-        $region = $this->getRegion();
+        $province = $this->getProvince();
         
-        $this->assertEquals($default, $region->$getter());
-        $region->$setter($value);
-        $this->assertEquals($value, $region->$getter());
+        $this->assertEquals($default, $province->$getter());
+        $province->$setter($value);
+        $this->assertEquals($value, $province->$getter());
     }
     
     public function getSimpleTestData()
@@ -56,19 +56,19 @@ class RegionTest extends \PHPUnit_Framework_TestCase
     
     public function testToString()
     {
-        $region = $this->getRegion();
+        $province = $this->getProvince();
         
-        $this->assertEquals('', $region);
-        $region->setName('New York');
-        $this->assertEquals('New York', $region);
+        $this->assertEquals('', $province);
+        $province->setName('New York');
+        $this->assertEquals('New York', $province);
     }    
     
     /**
-     * @return RegionInterface
+     * @return ProvinceInterface
      */
-    protected function getRegion()
+    protected function getProvince()
     {
-        return $this->getMockForAbstractClass('IR\Bundle\ZoneBundle\Model\Region');
+        return $this->getMockForAbstractClass('IR\Bundle\ZoneBundle\Model\Province');
     }
     
     /**

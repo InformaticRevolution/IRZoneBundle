@@ -53,32 +53,32 @@
         </property>                                                    
     </class>
 
-    <class name="IR\Bundle\ZoneBundle\Model\Region">
+    <class name="IR\Bundle\ZoneBundle\Model\Province">
         <property name="name">
             <constraint name="NotBlank">
-                <option name="message">ir_zone.region.name.blank</option> 
-                <option name="groups">Region</option>                       
+                <option name="message">ir_zone.province.name.blank</option> 
+                <option name="groups">Province</option>                       
             </constraint>
             <constraint name="Length">
                 <option name="min">2</option>
                 <option name="max">255</option>
-                <option name="minMessage">ir_zone.region.name.short</option>
-                <option name="maxMessage">ir_zone.region.name.long</option> 
-                <option name="groups">Region</option>                     
+                <option name="minMessage">ir_zone.province.name.short</option>
+                <option name="maxMessage">ir_zone.province.name.long</option> 
+                <option name="groups">Province</option>                     
             </constraint>
         </property> 
         
         <property name="code">
             <constraint name="NotBlank">
-                <option name="message">ir_zone.region.code.blank</option> 
-                <option name="groups">Region</option>                       
+                <option name="message">ir_zone.province.code.blank</option> 
+                <option name="groups">Province</option>                       
             </constraint>
         </property>    
         
         <property name="zone">
             <constraint name="NotNull">
-                <option name="message">ir_zone.region.zone.unset</option> 
-                <option name="groups">Region</option>                       
+                <option name="message">ir_zone.province.zone.unset</option> 
+                <option name="groups">Province</option>                       
             </constraint>
         </property>                                                                                                        
     </class>

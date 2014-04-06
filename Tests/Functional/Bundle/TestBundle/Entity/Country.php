@@ -30,8 +30,8 @@ class Country extends BaseCountry
     protected $id; 
     
     /**
-     * @ORM\OneToMany(targetEntity="Region", mappedBy="country", cascade={"all"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Province", mappedBy="country", cascade={"all"}, orphanRemoval=true)
      * @ORM\OrderBy({"name" = "ASC"})
      */
-    protected $regions;      
+    protected $provinces;      
 }

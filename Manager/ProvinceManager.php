@@ -14,21 +14,21 @@ namespace IR\Bundle\ZoneBundle\Manager;
 use IR\Bundle\ZoneBundle\Model\CountryInterface;
 
 /**
- * Abstract Region Manager.
+ * Abstract Province Manager.
  *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-abstract class RegionManager implements RegionManagerInterface
+abstract class ProvinceManager implements ProvinceManagerInterface
 {
     /**
      * {@inheritDoc}
      */    
-    public function createRegion(CountryInterface $country = null)
+    public function createProvince(CountryInterface $country = null)
     {
         $class = $this->getClass();
-        $region = new $class();
-        $region->setCountry($country);
+        $province = new $class();
+        $province->setCountry($country);
         
-        return $region;
+        return $province;
     }      
 }

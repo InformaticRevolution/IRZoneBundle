@@ -75,11 +75,11 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
      */
-    public function testZoneLoadThrowsExceptionUnlessRegionModelClassSet()
+    public function testZoneLoadThrowsExceptionUnlessProvinceModelClassSet()
     {
         $loader = new IRZoneExtension();
         $config = $this->getEmptyConfig();
-        unset($config['region_class']);
+        unset($config['province_class']);
         $loader->load(array($config), new ContainerBuilder());
     }      
 
@@ -103,14 +103,14 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertNotHasDefinition('ir_zone.form.country');
     }  
     
-    public function testDisableRegion()
+    public function testDisableProvince()
     {
         $this->configuration = new ContainerBuilder();
         $loader = new IRZoneExtension();
         $config = $this->getEmptyConfig();
-        $config['region'] = false;
+        $config['province'] = false;
         $loader->load(array($config), $this->configuration);
-        $this->assertNotHasDefinition('ir_zone.form.region');
+        $this->assertNotHasDefinition('ir_zone.form.province');
     }      
     
     public function testZoneLoadModelClassWithDefaults()
@@ -119,7 +119,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertParameter('Acme\ZoneBundle\Entity\Zone', 'ir_zone.model.zone.class');
         $this->assertParameter('Acme\ZoneBundle\Entity\Country', 'ir_zone.model.country.class');
-        $this->assertParameter('Acme\ZoneBundle\Entity\Region', 'ir_zone.model.region.class');
+        $this->assertParameter('Acme\ZoneBundle\Entity\Province', 'ir_zone.model.province.class');
     }        
     
     public function testZoneLoadModelClass()
@@ -128,7 +128,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertParameter('Acme\ZoneBundle\Entity\Zone', 'ir_zone.model.zone.class');
         $this->assertParameter('Acme\ZoneBundle\Entity\Country', 'ir_zone.model.country.class');
-        $this->assertParameter('Acme\ZoneBundle\Entity\Region', 'ir_zone.model.region.class');
+        $this->assertParameter('Acme\ZoneBundle\Entity\Province', 'ir_zone.model.province.class');
     }      
 
     public function testZoneLoadManagerClassWithDefaults()
@@ -138,7 +138,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertParameter('orm', 'ir_zone.db_driver');
         $this->assertAlias('ir_zone.manager.zone.default', 'ir_zone.manager.zone');
         $this->assertAlias('ir_zone.manager.country.default', 'ir_zone.manager.country');
-        $this->assertAlias('ir_zone.manager.region.default', 'ir_zone.manager.region');
+        $this->assertAlias('ir_zone.manager.province.default', 'ir_zone.manager.province');
     }   
     
     public function testZoneLoadManagerClass()
@@ -148,7 +148,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertParameter('orm', 'ir_zone.db_driver');
         $this->assertAlias('acme_zone.manager.zone', 'ir_zone.manager.zone');
         $this->assertAlias('acme_zone.manager.country', 'ir_zone.manager.country');
-        $this->assertAlias('acme_zone.manager.region', 'ir_zone.manager.region');
+        $this->assertAlias('acme_zone.manager.province', 'ir_zone.manager.province');
     }       
     
     public function testZoneLoadFormClassWithDefaults()
@@ -157,7 +157,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertParameter('ir_zone', 'ir_zone.form.type.zone');
         $this->assertParameter('ir_zone_country', 'ir_zone.form.type.country');
-        $this->assertParameter('ir_zone_region', 'ir_zone.form.type.region');
+        $this->assertParameter('ir_zone_province', 'ir_zone.form.type.province');
     }     
     
     public function testZoneLoadFormClass()
@@ -166,7 +166,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertParameter('acme_zone', 'ir_zone.form.type.zone');
         $this->assertParameter('acme_zone_country', 'ir_zone.form.type.country');
-        $this->assertParameter('acme_zone_region', 'ir_zone.form.type.region');
+        $this->assertParameter('acme_zone_province', 'ir_zone.form.type.province');
     }    
    
     public function testZoneLoadFormNameWithDefaults()
@@ -175,7 +175,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertParameter('ir_zone_form', 'ir_zone.form.name.zone');
         $this->assertParameter('ir_zone_country_form', 'ir_zone.form.name.country');
-        $this->assertParameter('ir_zone_region_form', 'ir_zone.form.name.region');
+        $this->assertParameter('ir_zone_province_form', 'ir_zone.form.name.province');
     }
     
     public function testZoneLoadFormName()
@@ -184,7 +184,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertParameter('acme_zone_form', 'ir_zone.form.name.zone');
         $this->assertParameter('acme_zone_country_form', 'ir_zone.form.name.country');
-        $this->assertParameter('acme_zone_region_form', 'ir_zone.form.name.region');
+        $this->assertParameter('acme_zone_province_form', 'ir_zone.form.name.province');
     }
     
     public function testZoneLoadFormServiceWithDefaults()
@@ -193,7 +193,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertHasDefinition('ir_zone.form.zone');
         $this->assertHasDefinition('ir_zone.form.country');
-        $this->assertHasDefinition('ir_zone.form.region');
+        $this->assertHasDefinition('ir_zone.form.province');
     }
     
     public function testZoneLoadFormService()
@@ -202,7 +202,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertHasDefinition('ir_zone.form.zone'); 
         $this->assertHasDefinition('ir_zone.form.country'); 
-        $this->assertHasDefinition('ir_zone.form.region'); 
+        $this->assertHasDefinition('ir_zone.form.province'); 
     }
     
     public function testZoneLoadTemplateConfigWithDefaults()

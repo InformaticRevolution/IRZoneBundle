@@ -61,23 +61,23 @@ final class IRZoneEvents
     const COUNTRY_DELETE_COMPLETED = 'ir_zone.admin.country.delete.completed';    
     
     /**
-     * The REGION_CREATE_COMPLETED event occurs after saving the region in the region creation process.
+     * The PROVINCE_CREATE_COMPLETED event occurs after saving the province in the province creation process.
      *
-     * The event listener method receives a IR\Bundle\ZoneBundle\Event\RegionEvent instance.
+     * The event listener method receives a IR\Bundle\ZoneBundle\Event\ProvinceEvent instance.
      */
-    const REGION_CREATE_COMPLETED = 'ir_zone.admin.region.create.completed';
+    const PROVINCE_CREATE_COMPLETED = 'ir_zone.admin.province.create.completed';
     
     /**
-     * The REGION_EDIT_COMPLETED event occurs after saving the region in the region edit process.
+     * The PROVINCE_EDIT_COMPLETED event occurs after saving the province in the province edit process.
      *
-     * The event listener method receives a IR\Bundle\ZoneBundle\Event\RegionEvent instance.
+     * The event listener method receives a IR\Bundle\ZoneBundle\Event\ProvinceEvent instance.
      */
-    const REGION_EDIT_COMPLETED = 'ir_zone.admin.region.edit.completed';
+    const PROVINCE_EDIT_COMPLETED = 'ir_zone.admin.province.edit.completed';
     
     /**
-     * The REGION_DELETE_COMPLETED event occurs after deleting the region.
+     * The PROVINCE_DELETE_COMPLETED event occurs after deleting the province.
      *
-     * The event listener method receives a IR\Bundle\ZoneBundle\Event\RegionEvent instance.
+     * The event listener method receives a IR\Bundle\ZoneBundle\Event\ProvinceEvent instance.
      */
-    const REGION_DELETE_COMPLETED = 'ir_zone.admin.region.delete.completed';        
+    const PROVINCE_DELETE_COMPLETED = 'ir_zone.admin.province.delete.completed';        
 }

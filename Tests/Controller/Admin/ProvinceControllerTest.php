@@ -14,25 +14,25 @@ namespace IR\Bundle\ZoneBundle\Tests\Controller\Admin;
 use IR\Bundle\ZoneBundle\Tests\Functional\WebTestCase;
 
 /**
- * Region Controller Test.
+ * Province Controller Test.
  *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-class RegionControllerTest extends WebTestCase
+class ProvinceControllerTest extends WebTestCase
 {
-    const FORM_INTENTION = 'region';
+    const FORM_INTENTION = 'province';
     
     
     protected function setUp()
     {
         parent::setUp();
         
-        $this->loadFixtures('region');
+        $this->loadFixtures('province');
     } 
 
     public function testNewActionGetMethod()
     {
-        $crawler = $this->client->request('GET', '/admin/countries/1/regions/new');
+        $crawler = $this->client->request('GET', '/admin/countries/1/provinces/new');
         
         $this->assertResponseStatusCode(200);
         $this->assertCount(1, $crawler->filter('form'));
@@ -40,8 +40,8 @@ class RegionControllerTest extends WebTestCase
 
     public function testNewActionPostMethod()
     {        
-        $this->client->request('POST', '/admin/countries/1/regions/new', array(
-            'ir_zone_region_form' => array (
+        $this->client->request('POST', '/admin/countries/1/provinces/new', array(
+            'ir_zone_province_form' => array (
                 'name'   => $this->faker->state(),
                 'code'   => $this->faker->stateAbbr(),
                 'zone'   => 2,
@@ -59,7 +59,7 @@ class RegionControllerTest extends WebTestCase
 
     public function testEditActionGetMethod()
     {   
-        $crawler = $this->client->request('GET', '/admin/countries/1/regions/1/edit');
+        $crawler = $this->client->request('GET', '/admin/countries/1/provinces/1/edit');
         
         $this->assertResponseStatusCode(200);
         $this->assertCount(1, $crawler->filter('form'));        
@@ -67,8 +67,8 @@ class RegionControllerTest extends WebTestCase
     
     public function testEditActionPostMethod()
     {        
-        $this->client->request('POST', '/admin/countries/1/regions/1/edit', array(
-            'ir_zone_region_form' => array (
+        $this->client->request('POST', '/admin/countries/1/provinces/1/edit', array(
+            'ir_zone_province_form' => array (
                 'name'   => $this->faker->state(),
                 'code'   => $this->faker->stateAbbr(),
                 'zone'   => 2,
@@ -86,7 +86,7 @@ class RegionControllerTest extends WebTestCase
     
     public function testDeleteAction()
     {
-        $this->client->request('GET', '/admin/countries/1/regions/1/delete');
+        $this->client->request('GET', '/admin/countries/1/provinces/1/delete');
         
         $this->assertResponseStatusCode(302);
         
@@ -94,21 +94,21 @@ class RegionControllerTest extends WebTestCase
         
         $this->assertResponseStatusCode(200);
         $this->assertCurrentUri('/admin/countries/1');
-        $this->assertCount(2, $crawler->filter('table.regions tbody tr'));
+        $this->assertCount(2, $crawler->filter('table.provinces tbody tr'));
     } 
 
     public function testNotFoundHttpWhenCountryNotExist()
     {
-        $this->client->request('GET', '/admin/countries/foo/regions/new');
+        $this->client->request('GET', '/admin/countries/foo/provinces/new');
         $this->assertResponseStatusCode(404);    
     }     
     
-    public function testNotFoundHttpWhenRegionNotExist()
+    public function testNotFoundHttpWhenProvinceNotExist()
     {
-        $this->client->request('GET', '/admin/countries/1/regions/foo/edit');
+        $this->client->request('GET', '/admin/countries/1/provinces/foo/edit');
         $this->assertResponseStatusCode(404);
 
-        $this->client->request('GET', '/admin/countries/1/regions/foo/delete');
+        $this->client->request('GET', '/admin/countries/1/provinces/foo/delete');
         $this->assertResponseStatusCode(404);      
     }     
 }

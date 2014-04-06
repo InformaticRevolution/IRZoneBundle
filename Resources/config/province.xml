@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="ir_zone.form.type.province.class">IR\Bundle\ZoneBundle\Form\Type\ProvinceType</parameter>
+    </parameters>
+
+    <services>
+        <service id="ir_zone.form.province" factory-service="form.factory" factory-method="createNamed" class="Symfony\Component\Form\Form">
+            <argument>%ir_zone.form.name.province%</argument>
+            <argument>%ir_zone.form.type.province%</argument>
+            <argument>null</argument>
+            <argument type="collection">
+                <argument key="validation_groups">%ir_zone.form.validation_groups.province%</argument>
+            </argument>             
+        </service>         
+
+        <service id="ir_zone.form.type.province" class="%ir_zone.form.type.province.class%">
+            <argument>%ir_zone.model.province.class%</argument>
+            <tag name="form.type" alias="ir_zone_province" />
+        </service>                      
+    </services>
+
+</container>

@@ -12,11 +12,11 @@
 namespace IR\Bundle\ZoneBundle\Model;
 
 /**
- * Region Interface.
+ * Province Interface.
  * 
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-interface RegionInterface 
+interface ProvinceInterface 
 {
     /**
      * Returns the id.
@@ -82,14 +82,14 @@ interface RegionInterface
     public function setZone(ZoneInterface $zone);    
     
     /**
-     * Checks whether the region is enabled.
+     * Checks whether the province is enabled.
      * 
      * @return Boolean
      */
     public function isEnabled();
     
     /**
-     * Sets the enabled status of the region.
+     * Sets the enabled status of the province.
      * 
      * @param Boolean $enabled
      */

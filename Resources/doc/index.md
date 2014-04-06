@@ -163,10 +163,10 @@ class Country extends BaseCountry
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Region", mappedBy="country", cascade={"all"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Province", mappedBy="country", cascade={"all"}, orphanRemoval=true)
      * @ORM\OrderBy({"name" = "ASC"})
      */
-    protected $regions;
+    protected $provinces;
 
 
     /**
@@ -220,8 +220,8 @@ Acme\ZoneBundle\Entity\Country:
                 strategy: AUTO
 
     oneToMany:
-        regions:
-            targetEntity: Region
+        provinces:
+            targetEntity: Province
             mappedBy: country
             cascade: [ all ]
             orphanRemoval: true
@@ -243,7 +243,7 @@ In XML:
             <generator strategy="AUTO" />
         </id> 
 
-        <one-to-many field="regions" target-entity="Region" mapped-by="country" orphan-removal="true">
+        <one-to-many field="provinces" target-entity="Province" mapped-by="country" orphan-removal="true">
             <cascade>
                 <cascade-all />
             </cascade>   
@@ -256,24 +256,24 @@ In XML:
 </doctrine-mapping>
 ```
 
-**c) Create your Region class**
+**c) Create your Province class**
 
 ##### Annotations
 
 ``` php
 <?php
-// src/Acme/ZoneBundle/Entity/Region.php
+// src/Acme/ZoneBundle/Entity/Province.php
 
 namespace Acme\ZoneBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use IR\Bundle\ZoneBundle\Model\Region as BaseRegion;
+use IR\Bundle\ZoneBundle\Model\Province as BaseProvince;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="acme_region")
+ * @ORM\Table(name="acme_province")
  */
-class Region extends BaseRegion
+class Province extends BaseProvince
 {
     /**
      * @ORM\Id
@@ -288,16 +288,16 @@ class Region extends BaseRegion
 
 ``` php
 <?php
-// src/Acme/ZoneBundle/Entity/Region.php
+// src/Acme/ZoneBundle/Entity/Province.php
 
 namespace Acme\ZoneBundle\Entity;
 
-use IR\Bundle\ZoneBundle\Model\Region as BaseRegion;
+use IR\Bundle\ZoneBundle\Model\Province as BaseProvince;
 
 /**
- * Region implementation.
+ * Province implementation.
  */
-class Region extends BaseRegion
+class Province extends BaseProvince
 {
 }
 ```
@@ -305,10 +305,10 @@ class Region extends BaseRegion
 In YAML:
 
 ``` yaml
-# src/Acme/ZoneBundle/Resources/config/doctrine/Region.orm.yml
-Acme\ZoneBundle\Entity\Region:
+# src/Acme/ZoneBundle/Resources/config/doctrine/Province.orm.yml
+Acme\ZoneBundle\Entity\Province:
     type:  entity
-    table: acme_region
+    table: acme_province
     id:
         id:
             type: integer
@@ -319,14 +319,14 @@ Acme\ZoneBundle\Entity\Region:
 In XML:
 
 ``` xml
-<!-- src/Acme/ZoneBundle/Resources/config/doctrine/Region.orm.xml -->
+<!-- src/Acme/ZoneBundle/Resources/config/doctrine/Province.orm.xml -->
 <?xml version="1.0" encoding="UTF-8"?>
 
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <entity name="Acme\ZoneBundle\Entity\Region" table="acme_region">
+    <entity name="Acme\ZoneBundle\Entity\Province" table="acme_province">
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO" />
         </id> 
@@ -347,7 +347,7 @@ ir_zone:
     db_driver: orm # orm is the only available driver for the moment 
     zone_class: Acme\ZoneBundle\Entity\Zone
     country_class: Acme\ZoneBundle\Entity\Country
-    region_class: Acme\ZoneBundle\Entity\Region
+    province_class: Acme\ZoneBundle\Entity\Province
 ```
 
 **b) Add the ZoneInterface and CountryInterface path to the RTEL**

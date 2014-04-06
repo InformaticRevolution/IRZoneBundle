@@ -13,14 +13,14 @@ namespace IR\Bundle\ZoneBundle\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\ObjectRepository;
-use IR\Bundle\ZoneBundle\Manager\RegionManager as AbstractRegionManager;
+use IR\Bundle\ZoneBundle\Manager\ProvinceManager as AbstractProvinceManager;
 
 /**
- * Doctrine Region Manager.
+ * Doctrine Province Manager.
  *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-class RegionManager extends AbstractRegionManager
+class ProvinceManager extends AbstractProvinceManager
 {
     /**
      * @var ObjectRepository
@@ -56,7 +56,7 @@ class RegionManager extends AbstractRegionManager
     /**
      * {@inheritDoc}
      */
-    public function findRegionBy(array $criteria)
+    public function findProvinceBy(array $criteria)
     {
         return $this->repository->findOneBy($criteria);
     }         

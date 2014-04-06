@@ -11,22 +11,22 @@
 
 namespace IR\Bundle\ZoneBundle\Tests\Doctrine;
 
-use IR\Bundle\ZoneBundle\Model\RegionInterface;
-use IR\Bundle\ZoneBundle\Doctrine\RegionManager;
+use IR\Bundle\ZoneBundle\Model\ProvinceInterface;
+use IR\Bundle\ZoneBundle\Doctrine\ProvinceManager;
 
 /**
- * Region Manager Test.
+ * Province Manager Test.
  *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-class RegionManagerTest extends \PHPUnit_Framework_TestCase
+class ProvinceManagerTest extends \PHPUnit_Framework_TestCase
 {
-    const REGION_CLASS = 'IR\Bundle\ZoneBundle\Tests\TestRegion';
+    const PROVINCE_CLASS = 'IR\Bundle\ZoneBundle\Tests\TestProvince';
  
     /**
-     * @var RegionManager
+     * @var ProvinceManager
      */
-    protected $regionManager;      
+    protected $provinceManager;      
     
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject
@@ -51,22 +51,22 @@ class RegionManagerTest extends \PHPUnit_Framework_TestCase
                 
         $this->objectManager->expects($this->any())
             ->method('getRepository')
-            ->with($this->equalTo(static::REGION_CLASS))
+            ->with($this->equalTo(static::PROVINCE_CLASS))
             ->will($this->returnValue($this->repository));        
 
         $this->objectManager->expects($this->any())
             ->method('getClassMetadata')
-            ->with($this->equalTo(static::REGION_CLASS))
+            ->with($this->equalTo(static::PROVINCE_CLASS))
             ->will($this->returnValue($class));        
         
         $class->expects($this->any())
             ->method('getName')
-            ->will($this->returnValue(static::REGION_CLASS));        
+            ->will($this->returnValue(static::PROVINCE_CLASS));        
         
-        $this->regionManager = new RegionManager($this->objectManager, static::REGION_CLASS);
+        $this->provinceManager = new ProvinceManager($this->objectManager, static::PROVINCE_CLASS);
     } 
     
-    public function testFindRegionBy()
+    public function testFindProvinceBy()
     {
         $criteria = array("foo" => "bar");
         
@@ -75,20 +75,20 @@ class RegionManagerTest extends \PHPUnit_Framework_TestCase
             ->with($this->equalTo($criteria))
             ->will($this->returnValue(array()));
 
-        $this->regionManager->findRegionBy($criteria);
+        $this->provinceManager->findProvinceBy($criteria);
     }
 
     public function testGetClass()
     {
-        $this->assertEquals(static::REGION_CLASS, $this->regionManager->getClass());
+        $this->assertEquals(static::PROVINCE_CLASS, $this->provinceManager->getClass());
     }    
 
     /**
-     * @return RegionInterface
+     * @return ProvinceInterface
      */
-    protected function getRegion()
+    protected function getProvince()
     {
-        $class = static::REGION_CLASS;
+        $class = static::PROVINCE_CLASS;
 
         return new $class();
     }      

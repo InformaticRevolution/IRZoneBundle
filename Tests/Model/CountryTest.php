@@ -12,7 +12,7 @@
 namespace IR\Bundle\ZoneBundle\Tests\Model;
 
 use IR\Bundle\ZoneBundle\Model\ZoneInterface;
-use IR\Bundle\ZoneBundle\Model\RegionInterface;
+use IR\Bundle\ZoneBundle\Model\ProvinceInterface;
 use IR\Bundle\ZoneBundle\Model\CountryInterface;
 
 /**
@@ -26,46 +26,46 @@ class CountryTest extends \PHPUnit_Framework_TestCase
     {
         $country = $this->getCountry();
         
-        $this->assertInstanceOf('Doctrine\Common\Collections\Collection', $country->getRegions());
+        $this->assertInstanceOf('Doctrine\Common\Collections\Collection', $country->getProvinces());
     }     
     
-    public function testAddRegion()
+    public function testAddProvince()
     {
         $country = $this->getCountry();
-        $region = $this->getRegion();
+        $province = $this->getProvince();
         
-        $this->assertNotContains($region, $country->getRegions());
-        $this->assertNull($region->getCountry());
+        $this->assertNotContains($province, $country->getProvinces());
+        $this->assertNull($province->getCountry());
         
-        $country->addRegion($region);
+        $country->addProvince($province);
         
-        $this->assertContains($region, $country->getRegions());
-        $this->assertSame($country, $region->getCountry());
+        $this->assertContains($province, $country->getProvinces());
+        $this->assertSame($country, $province->getCountry());
     }    
     
-    public function testRemoveRegion()
+    public function testRemoveProvince()
     {
         $country = $this->getCountry();
-        $region = $this->getRegion();
-        $country->addRegion($region);
+        $province = $this->getProvince();
+        $country->addProvince($province);
         
-        $this->assertContains($region, $country->getRegions());
-        $this->assertSame($country, $region->getCountry());
+        $this->assertContains($province, $country->getProvinces());
+        $this->assertSame($country, $province->getCountry());
         
-        $country->removeRegion($region);
+        $country->removeProvince($province);
         
-        $this->assertNotContains($region, $country->getRegions());
-        $this->assertNull($region->getCountry());
+        $this->assertNotContains($province, $country->getProvinces());
+        $this->assertNull($province->getCountry());
     }      
     
-    public function testHasRegion()
+    public function testHasProvince()
     {
         $country = $this->getCountry();
-        $region = $this->getRegion();
+        $province = $this->getProvince();
         
-        $this->assertFalse($country->hasRegion($region));
-        $country->addRegion($region);
-        $this->assertTrue($country->hasRegion($region));
+        $this->assertFalse($country->hasProvince($province));
+        $country->addProvince($province);
+        $this->assertTrue($country->hasProvince($province));
     }    
     
     public function testEnabled()
@@ -119,11 +119,11 @@ class CountryTest extends \PHPUnit_Framework_TestCase
     }  
     
     /**
-     * @return RegionInterface
+     * @return ProvinceInterface
      */
-    protected function getRegion()
+    protected function getProvince()
     {
-        return $this->getMockForAbstractClass('IR\Bundle\ZoneBundle\Model\Region');
+        return $this->getMockForAbstractClass('IR\Bundle\ZoneBundle\Model\Province');
     }      
     
     /**

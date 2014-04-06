@@ -52,25 +52,25 @@ ir_zone:
                 updated: Le pays a été mis à jour
                 deleted: Le pays a été supprimé 
                 
-        region:   
+        province:   
             name: Nom
             code: Code
             enabled: Activé
 
             list:
-                no_results: Aucune région pour le moment.      
+                no_results: Aucun état pour le moment.      
             new:
-                title: Ajouter une région
+                title: Ajouter un état
                 save: Enregistrer
             edit:
-                title: Modifier une région
+                title: Modifier un état
                 save: Enregistrer
             action: 
-                new: Ajouter une région       
+                new: Ajouter un état       
             flash:
-                created: La région a été créée
-                updated: La région a été mise à jour
-                deleted: La région a été supprimée                
+                created: L'état a été créé
+                updated: L'état a été mis à jour
+                deleted: L'état a été supprimé                
     
     # Form field labels
     form:  
@@ -82,7 +82,7 @@ ir_zone:
             iso_code: Code ISO
             zone: Zone
             enabled: Activé    
-        region:
+        province:
             name: Nom
             code: Code
             zone: Zone

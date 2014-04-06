@@ -12,15 +12,15 @@
 namespace IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use IR\Bundle\ZoneBundle\Model\Region as BaseRegion;
+use IR\Bundle\ZoneBundle\Model\Province as BaseProvince;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="region")
+ * @ORM\Table(name="province")
  *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-class Region extends BaseRegion
+class Province extends BaseProvince
 {
     /**
      * @ORM\Id

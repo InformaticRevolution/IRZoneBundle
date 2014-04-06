@@ -12,38 +12,38 @@
 namespace IR\Bundle\ZoneBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
-use IR\Bundle\ZoneBundle\Model\RegionInterface;
+use IR\Bundle\ZoneBundle\Model\ProvinceInterface;
 
 /**
- * Region Event.
+ * Province Event.
  *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-class RegionEvent extends Event
+class ProvinceEvent extends Event
 {
     /**
-     * @var RegionInterface
+     * @var ProvinceInterface
      */        
-    protected $region;
+    protected $province;
     
     
    /**
     * Constructor.
     *
-    * @param RegionInterface $region
+    * @param ProvinceInterface $province
     */         
-    public function __construct(RegionInterface $region)
+    public function __construct(ProvinceInterface $province)
     {
-        $this->region = $region;
+        $this->province = $province;
     }
 
     /**
-     * Returns the region.
+     * Returns the province.
      * 
-     * @return RegionInterface
+     * @return ProvinceInterface
      */
-    public function getRegion()
+    public function getProvince()
     {
-        return $this->region;
+        return $this->province;
     }
 }

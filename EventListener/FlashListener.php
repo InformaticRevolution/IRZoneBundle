@@ -31,9 +31,9 @@ class FlashListener implements EventSubscriberInterface
         IRZoneEvents::COUNTRY_CREATE_COMPLETED => 'ir_zone.admin.country.flash.created',
         IRZoneEvents::COUNTRY_EDIT_COMPLETED   => 'ir_zone.admin.country.flash.updated',
         IRZoneEvents::COUNTRY_DELETE_COMPLETED => 'ir_zone.admin.country.flash.deleted',
-        IRZoneEvents::REGION_CREATE_COMPLETED  => 'ir_zone.admin.region.flash.created',
-        IRZoneEvents::REGION_EDIT_COMPLETED    => 'ir_zone.admin.region.flash.updated',
-        IRZoneEvents::REGION_DELETE_COMPLETED  => 'ir_zone.admin.region.flash.deleted',           
+        IRZoneEvents::PROVINCE_CREATE_COMPLETED  => 'ir_zone.admin.province.flash.created',
+        IRZoneEvents::PROVINCE_EDIT_COMPLETED    => 'ir_zone.admin.province.flash.updated',
+        IRZoneEvents::PROVINCE_DELETE_COMPLETED  => 'ir_zone.admin.province.flash.deleted',           
     );
 
     /**
@@ -71,9 +71,9 @@ class FlashListener implements EventSubscriberInterface
             IRZoneEvents::COUNTRY_CREATE_COMPLETED => 'addSuccessFlash',
             IRZoneEvents::COUNTRY_EDIT_COMPLETED   => 'addSuccessFlash',
             IRZoneEvents::COUNTRY_DELETE_COMPLETED => 'addSuccessFlash',
-            IRZoneEvents::REGION_CREATE_COMPLETED  => 'addSuccessFlash',
-            IRZoneEvents::REGION_EDIT_COMPLETED    => 'addSuccessFlash',
-            IRZoneEvents::REGION_DELETE_COMPLETED  => 'addSuccessFlash',              
+            IRZoneEvents::PROVINCE_CREATE_COMPLETED  => 'addSuccessFlash',
+            IRZoneEvents::PROVINCE_EDIT_COMPLETED    => 'addSuccessFlash',
+            IRZoneEvents::PROVINCE_DELETE_COMPLETED  => 'addSuccessFlash',              
         );
     }
 

@@ -18,14 +18,14 @@ ir_zone:
         zone:
             unset: Veuillez sélectionner une zone
             
-    region:
+    province:
         name:
-            blank: Veuillez saisir le nom de la région
-            short: Le nom de la région doit comporter au moins {{ limit }} caractères
-            long: Le nom de la région ne doit pas comporter plus de {{ limit }} caractères  
+            blank: Veuillez saisir le nom de l'état
+            short: Le nom de l'état doit comporter au moins {{ limit }} caractères
+            long: Le nom de l'état ne doit pas comporter plus de {{ limit }} caractères  
             
         code: 
-            blank: Veuillez saisir le code de la région
+            blank: Veuillez saisir le code de l'état
             
         zone:
             unset: Veuillez sélectionner une zone            
