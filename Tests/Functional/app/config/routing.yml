@@ -1,0 +1,3 @@
+ir_zone_admin:
+    resource: "@IRZoneBundle/Resources/config/routing.xml" 
+    prefix: /admin

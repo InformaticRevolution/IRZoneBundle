@@ -1,0 +1,38 @@
+framework:
+    secret: test
+    test: ~
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+    form: ~
+    csrf_protection: ~
+    validation: { enable_annotations: true }    
+    templating:
+        engines: ['twig', 'php']   
+    session:
+        storage_id: session.storage.mock_file
+     
+# Twig Configuration        
+twig:
+    debug: %kernel.debug%
+    strict_variables: %kernel.debug%        
+          
+# Doctrine Configuration        
+doctrine:
+    dbal:
+        driver: pdo_sqlite
+        path: %kernel.cache_dir%/database.db
+        
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        auto_mapping: true 
+        
+        resolve_target_entities:
+            IR\Bundle\ZoneBundle\Model\ZoneInterface: IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Zone
+            IR\Bundle\ZoneBundle\Model\CountryInterface: IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Country 
+        
+# IRZone Configuration
+ir_zone:
+    db_driver: orm 
+    zone_class: IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Zone 
+    country_class: IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Country 
+    region_class: IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Region 

@@ -1,0 +1,89 @@
+ir_zone: 
+    admin:
+        zone: 
+            name: Name
+            enabled: Enabled
+
+            list:
+                title: Zones
+                no_results: You haven't added any zones yet.
+            show:
+                title: Zone details
+                general_info: General information        
+            new:
+                title: Add a zone
+                save: Save
+            edit:
+                title: Edit a zone
+                save: Save
+            action: 
+                new: Add a zone 
+                edit: Edit
+                delete: Delete            
+            flash:
+                created: The zone has been successfully created
+                updated: The zone has been successfully updated
+                deleted: The zone has been successfully deleted
+                
+        country: 
+            name: Name
+            iso_code: ISO code
+            zone: Zone
+            enabled: Enabled
+
+            list:
+                title: Countries
+                no_results: You haven't added any countries yet.
+            show:
+                title: Country details
+                general_info: General information        
+            new:
+                title: Add a country
+                save: Save
+            edit:
+                title: Edit a country
+                save: Save
+            action: 
+                new: Add a country 
+                edit: Edit
+                delete: Delete            
+            flash:
+                created: The country has been successfully created
+                updated: The country has been successfully updated
+                deleted: The country has been successfully deleted 
+                
+        region: 
+            name: Name
+            code: Code
+            enabled: Enabled
+
+            list:
+                no_results: You haven't added any regions yet.       
+            new:
+                title: Add a region
+                save: Save
+            edit:
+                title: Edit a region
+                save: Save
+            action: 
+                new: Add a region           
+            flash:
+                created: The region has been successfully created
+                updated: The region has been successfully updated
+                deleted: The region has been successfully deleted                 
+            
+    # Form field labels
+    form:  
+        zone:
+            name: Name
+            enabled: Enabled        
+        country:
+            name: Name
+            iso_code: ISO code
+            zone: Zone
+            enabled: Enabled
+        region:
+            name: Name
+            code: Code
+            zone: Zone
+            enabled: Enabled            

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="ir_zone.form.type.country.class">IR\Bundle\ZoneBundle\Form\Type\CountryType</parameter>
+    </parameters>
+
+    <services>
+        <service id="ir_zone.form.country" factory-service="form.factory" factory-method="createNamed" class="Symfony\Component\Form\Form">
+            <argument>%ir_zone.form.name.country%</argument>
+            <argument>%ir_zone.form.type.country%</argument>
+            <argument>null</argument>
+            <argument type="collection">
+                <argument key="validation_groups">%ir_zone.form.validation_groups.country%</argument>
+            </argument>             
+        </service>         
+
+        <service id="ir_zone.form.type.country" class="%ir_zone.form.type.country.class%">
+            <argument>%ir_zone.model.country.class%</argument>
+            <tag name="form.type" alias="ir_zone_country" />
+        </service>    
+        
+        <!-- Country Choice Type -->
+      
+        <service id="ir_zone.form.type.country_choice" class="%ir_zone.form.type.country_choice.class%">
+            <argument>%ir_zone.model.country.class%</argument>
+            <tag name="form.type" alias="ir_zone_country_choice" />
+        </service>                        
+    </services>
+
+</container>

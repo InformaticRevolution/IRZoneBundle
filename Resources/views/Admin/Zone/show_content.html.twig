@@ -1,0 +1,33 @@
+<div class="page-header">
+    <h1>{{ 'ir_zone.admin.zone.show.title'|trans }}</h1>
+</div>  
+
+<div class="well well-sm">
+    <a href="{{ path('ir_zone_admin_zone_edit', {'id': zone.id}) }}" class="btn btn-primary">
+        <i class="glyphicon glyphicon-edit"></i> {{ 'ir_zone.admin.zone.action.edit'|trans }}
+    </a>
+    <a href="{{ path('ir_zone_admin_zone_delete', {'id': zone.id}) }}" class="btn btn-danger">
+        <i class="glyphicon glyphicon-trash"></i> {{ 'ir_zone.admin.zone.action.delete'|trans }}
+    </a>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{ 'ir_zone.admin.zone.show.general_info'|trans }}
+    </div>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td>{{ 'ir_zone.admin.zone.name'|trans }}</td>
+                <td>{{ zone.name }}</td>        
+            </tr>  
+            <tr>
+                <td>{{ 'ir_zone.admin.zone.enabled'|trans }}</td>
+                <td>
+                    <i class="glyphicon glyphicon-{{ zone.enabled ? 'ok' : 'remove' }}"></i> 
+                </td>        
+            </tr>        
+        </tbody>
+    </table>
+</div>

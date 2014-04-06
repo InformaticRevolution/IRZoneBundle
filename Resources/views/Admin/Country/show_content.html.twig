@@ -1,0 +1,95 @@
+<div class="page-header">
+    <h1>{{ 'ir_zone.admin.country.show.title'|trans }}</h1>
+</div>  
+
+<div class="well well-sm">
+    <a href="{{ path('ir_zone_admin_country_edit', {'id': country.id}) }}" class="btn btn-primary">
+        <i class="glyphicon glyphicon-edit"></i> {{ 'ir_zone.admin.country.action.edit'|trans }}
+    </a>
+    <a href="{{ path('ir_zone_admin_country_delete', {'id': country.id}) }}" class="btn btn-danger">
+        <i class="glyphicon glyphicon-trash"></i> {{ 'ir_zone.admin.country.action.delete'|trans }}
+    </a>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{ 'ir_zone.admin.country.show.general_info'|trans }}
+    </div>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td>{{ 'ir_zone.admin.country.name'|trans }}</td>
+                <td>{{ country.name }}</td>        
+            </tr>  
+            <tr>
+                <td>{{ 'ir_zone.admin.country.iso_code'|trans }}</td>
+                <td>{{ country.isoCode }}</td>        
+            </tr> 
+            <tr>
+                <td>{{ 'ir_zone.admin.country.zone'|trans }}</td>
+                <td>{{ country.zone }}</td>        
+            </tr>             
+            <tr>
+                <td>{{ 'ir_zone.admin.country.enabled'|trans }}</td>
+                <td>
+                    <i class="glyphicon glyphicon-{{ country.enabled ? 'ok' : 'remove' }}"></i> 
+                </td>        
+            </tr>        
+        </tbody>
+    </table>
+</div>
+
+<!-- REGIONS -->
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <a href="{{ path('ir_zone_admin_region_new', {'countryId': country.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-plus-sign"></i> {{ 'ir_zone.admin.region.action.new'|trans }}
+        </a>     
+    </div>
+    
+    {% if country.regions|length %}
+    <table class="table regions">
+        <thead>
+            <tr>
+                <th>{{ 'ir_zone.admin.region.name'|trans }}</th>
+                <th>{{ 'ir_zone.admin.region.code'|trans }}</th>
+                <th>{{ 'ir_zone.admin.region.enabled'|trans }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for region in country.regions %}
+            <tr>
+                <td>{{ region.name }}</td>
+                <td>{{ region.code }}</td>
+                <td>
+                    <i class="glyphicon glyphicon-{% if region.enabled %}ok{% else %}remove{% endif %}"></i>
+                </td>
+                <td>
+                    <div class="pull-right">                            
+                        <a href="{{ path('ir_zone_admin_region_edit', {'countryId': country.id, 'id': region.id}) }}" class="btn btn-sm btn-primary">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </a>
+                        <a href="{{ path('ir_zone_admin_region_delete', {'countryId': country.id, 'id': region.id}) }}" class="btn btn-sm btn-danger">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </a>  
+                    </div>       
+                </td>
+            </tr>        
+        {% endfor %}                
+        </tbody>
+    </table>            
+    {% else %}
+    <div class="panel-body">
+        {{ 'ir_zone.admin.region.list.no_results'|trans }}
+    </div>
+    {% endif %}            
+    
+     <div class="panel-footer">
+        <a href="{{ path('ir_zone_admin_region_new', {'countryId': country.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-plus-sign"></i> {{ 'ir_zone.admin.region.action.new'|trans }}
+        </a>     
+    </div>
+</div>

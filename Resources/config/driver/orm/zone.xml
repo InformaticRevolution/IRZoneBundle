@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+  
+    <parameters>
+        <parameter key="ir_zone.manager.zone.class">IR\Bundle\ZoneBundle\Doctrine\ZoneManager</parameter>
+        <parameter key="ir_zone.form.type.zone_choice.class">IR\Bundle\ZoneBundle\Form\Type\ZoneEntityChoiceType</parameter>
+    </parameters>
+
+    <services>        
+        <service id="ir_zone.entity_manager" alias="doctrine.orm.default_entity_manager" public="false" />
+
+        <service id="ir_zone.manager.zone.default" class="%ir_zone.manager.zone.class%" public="false">
+            <argument type="service" id="ir_zone.entity_manager" />
+            <argument>%ir_zone.model.zone.class%</argument>
+        </service>          
+    </services>  
+
+</container>

@@ -1,0 +1,48 @@
+<div class="page-header">
+    <h1>{{ 'ir_zone.admin.zone.list.title'|trans }}</h1>
+</div>
+
+<div class="well well-sm">
+    <a href="{{ path('ir_zone_admin_zone_new') }}" class="btn btn-primary">
+        <i class="glyphicon glyphicon-plus"></i> {{ 'ir_zone.admin.zone.action.new'|trans }}
+    </a>
+</div>  
+
+{% if zones|length %}
+<table class="table table-striped">      
+    <thead>
+        <tr>
+            <th>{{ 'ir_zone.admin.zone.name'|trans }}</th>
+            <th>{{ 'ir_zone.admin.zone.enabled'|trans }}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for zone in zones %}
+        <tr>
+            <td>{{ zone.name }}</td>
+            <td>
+                <i class="glyphicon glyphicon-{{ zone.enabled ? 'ok' : 'remove' }}"></i> 
+            </td>
+            <td>
+                <div class="pull-right">
+                    <a href="{{ path('ir_zone_admin_zone_show', {'id': zone.id}) }}" class="btn btn-default">
+                        <i class="glyphicon glyphicon-list"></i>
+                    </a>                     
+                    <a href="{{ path('ir_zone_admin_zone_edit', {'id': zone.id}) }}" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </a>
+                    <a href="{{ path('ir_zone_admin_zone_delete', {'id': zone.id}) }}" class="btn btn-danger">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="well">
+    {{ 'ir_zone.admin.zone.list.no_results'|trans }}
+</div>
+{% endif %}

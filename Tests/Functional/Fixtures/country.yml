@@ -1,0 +1,9 @@
+IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Zone:
+    zone:
+        name: <sentence(2)> 
+
+IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Country:
+    country{1..3}:
+        name: <country()>
+        isoCode: <countryCode()>
+        zone: @zone       

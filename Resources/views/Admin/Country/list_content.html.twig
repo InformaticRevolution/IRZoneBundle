@@ -1,0 +1,52 @@
+<div class="page-header">
+    <h1>{{ 'ir_zone.admin.country.list.title'|trans }}</h1>
+</div>
+
+<div class="well well-sm">
+    <a href="{{ path('ir_zone_admin_country_new') }}" class="btn btn-primary">
+        <i class="glyphicon glyphicon-plus"></i> {{ 'ir_zone.admin.country.action.new'|trans }}
+    </a>
+</div>  
+
+{% if countries|length %}
+<table class="table table-striped">      
+    <thead>
+        <tr>
+            <th>{{ 'ir_zone.admin.country.name'|trans }}</th>
+            <th>{{ 'ir_zone.admin.country.iso_code'|trans }}</th>
+            <th>{{ 'ir_zone.admin.country.zone'|trans }}</th>
+            <th>{{ 'ir_zone.admin.country.enabled'|trans }}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for country in countries %}
+        <tr>
+            <td>{{ country.name }}</td>
+            <td>{{ country.isoCode }}</td>
+            <td>{{ country.zone }}</td>
+            <td>
+                <i class="glyphicon glyphicon-{{ country.enabled ? 'ok' : 'remove' }}"></i> 
+            </td>
+            <td>
+                <div class="pull-right">
+                    <a href="{{ path('ir_zone_admin_country_show', {'id': country.id}) }}" class="btn btn-default">
+                        <i class="glyphicon glyphicon-list"></i>
+                    </a>                     
+                    <a href="{{ path('ir_zone_admin_country_edit', {'id': country.id}) }}" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </a>
+                    <a href="{{ path('ir_zone_admin_country_delete', {'id': country.id}) }}" class="btn btn-danger">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="well">
+    {{ 'ir_zone.admin.country.list.no_results'|trans }}
+</div>
+{% endif %}

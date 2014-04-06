@@ -1,0 +1,4 @@
+db_driver: orm
+zone_class: Acme\ZoneBundle\Entity\Zone
+country_class: Acme\ZoneBundle\Entity\Country
+region_class: Acme\ZoneBundle\Entity\Region

@@ -1,0 +1,16 @@
+IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Zone:
+    zone{1..2}:
+        name: <sentence(2)> 
+        
+IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Country:
+    country:
+        name: <country()>
+        isoCode: <countryCode()>
+        zone: @zone1        
+        regions: ["@region1", "@region2", "@region3"]
+        
+IR\Bundle\ZoneBundle\Tests\Functional\Bundle\TestBundle\Entity\Region (local):
+    region{1..3}:
+        name: <state()>
+        code: <stateAbbr()>
+        zone: @zone2

@@ -1,0 +1,31 @@
+ir_zone:   
+    zone:
+        name:
+            blank: Please enter the zone name
+            short: Zone name must be at least {{ limit }} characters long
+            long: Zone name must not be longer than {{ limit }} characters 
+            
+    country:
+        name:
+            blank: Please enter the country name
+            short: Country name must be at least {{ limit }} characters long
+            long: Country name must not be longer than {{ limit }} characters 
+            
+        iso_code: 
+            blank: Please enter the country ISO code
+            invalid: Invalid ISO code
+            
+        zone:
+            unset: Please select a zone    
+            
+    region:
+        name:
+            blank: Please enter the region name
+            short: Region name must be at least {{ limit }} characters long
+            long: Region name must not be longer than {{ limit }} characters 
+            
+        code: 
+            blank: Please enter the region code        
+            
+        zone:
+            unset: Please select a zone            

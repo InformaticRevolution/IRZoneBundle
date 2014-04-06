@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="ir_zone.form.type.region.class">IR\Bundle\ZoneBundle\Form\Type\RegionType</parameter>
+    </parameters>
+
+    <services>
+        <service id="ir_zone.form.region" factory-service="form.factory" factory-method="createNamed" class="Symfony\Component\Form\Form">
+            <argument>%ir_zone.form.name.region%</argument>
+            <argument>%ir_zone.form.type.region%</argument>
+            <argument>null</argument>
+            <argument type="collection">
+                <argument key="validation_groups">%ir_zone.form.validation_groups.region%</argument>
+            </argument>             
+        </service>         
+
+        <service id="ir_zone.form.type.region" class="%ir_zone.form.type.region.class%">
+            <argument>%ir_zone.model.region.class%</argument>
+            <tag name="form.type" alias="ir_zone_region" />
+        </service>                      
+    </services>
+
+</container>

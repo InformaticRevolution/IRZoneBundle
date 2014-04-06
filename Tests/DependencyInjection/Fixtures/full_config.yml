@@ -1,0 +1,24 @@
+db_driver: orm
+zone_class: Acme\ZoneBundle\Entity\Zone
+country_class: Acme\ZoneBundle\Entity\Country
+region_class: Acme\ZoneBundle\Entity\Region
+zone_manager: acme_zone.manager.zone
+country_manager: acme_zone.manager.country
+region_manager: acme_zone.manager.region
+zone:
+    form:
+        type: acme_zone
+        name: acme_zone_form
+        validation_groups: [acme_zone]   
+country:
+    form:
+        type: acme_zone_country
+        name: acme_zone_country_form
+        validation_groups: [acme_country]
+region:
+    form:
+        type: acme_zone_region
+        name: acme_zone_region_form
+        validation_groups: [acme_region]        
+template:
+    engine: php        

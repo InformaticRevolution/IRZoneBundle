@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+    <class name="IR\Bundle\ZoneBundle\Model\Zone">
+        <property name="name">
+            <constraint name="NotBlank">
+                <option name="message">ir_zone.zone.name.blank</option> 
+                <option name="groups">Zone</option>                       
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="max">255</option>
+                <option name="minMessage">ir_zone.zone.name.short</option>
+                <option name="maxMessage">ir_zone.zone.name.long</option> 
+                <option name="groups">Zone</option>                     
+            </constraint>
+        </property> 
+    </class>    
+    
+    <class name="IR\Bundle\ZoneBundle\Model\Country">
+        <property name="name">
+            <constraint name="NotBlank">
+                <option name="message">ir_zone.country.name.blank</option> 
+                <option name="groups">Country</option>                       
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="max">255</option>
+                <option name="minMessage">ir_zone.country.name.short</option>
+                <option name="maxMessage">ir_zone.country.name.long</option> 
+                <option name="groups">Country</option>                     
+            </constraint>
+        </property> 
+        
+        <property name="isoCode">
+            <constraint name="NotBlank">
+                <option name="message">ir_zone.country.iso_code.blank</option> 
+                <option name="groups">Country</option>                       
+            </constraint>            
+            <constraint name="Country">
+                <option name="message">ir_zone.country.iso_code.invalid</option> 
+            </constraint>
+        </property>   
+        
+        <property name="zone">
+            <constraint name="NotNull">
+                <option name="message">ir_zone.country.zone.unset</option> 
+                <option name="groups">Country</option>                       
+            </constraint>
+        </property>                                                    
+    </class>
+
+    <class name="IR\Bundle\ZoneBundle\Model\Region">
+        <property name="name">
+            <constraint name="NotBlank">
+                <option name="message">ir_zone.region.name.blank</option> 
+                <option name="groups">Region</option>                       
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="max">255</option>
+                <option name="minMessage">ir_zone.region.name.short</option>
+                <option name="maxMessage">ir_zone.region.name.long</option> 
+                <option name="groups">Region</option>                     
+            </constraint>
+        </property> 
+        
+        <property name="code">
+            <constraint name="NotBlank">
+                <option name="message">ir_zone.region.code.blank</option> 
+                <option name="groups">Region</option>                       
+            </constraint>
+        </property>    
+        
+        <property name="zone">
+            <constraint name="NotNull">
+                <option name="message">ir_zone.region.zone.unset</option> 
+                <option name="groups">Region</option>                       
+            </constraint>
+        </property>                                                                                                        
+    </class>
+</constraint-mapping>        
