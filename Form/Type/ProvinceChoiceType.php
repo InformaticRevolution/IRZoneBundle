@@ -40,7 +40,7 @@ class ProvinceChoiceType extends AbstractType
                 'country'
             ))
             ->addAllowedTypes(array(
-                'country' => 'IR\Bundle\ZoneBundle\Model\ProvinceInterface'
+                'country' => 'IR\Bundle\ZoneBundle\Model\CountryInterface'
             )); 
     } 
     
