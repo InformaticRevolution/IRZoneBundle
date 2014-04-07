@@ -6,6 +6,7 @@
 
     <parameters>
         <parameter key="ir_zone.form.type.province.class">IR\Bundle\ZoneBundle\Form\Type\ProvinceType</parameter>
+        <parameter key="ir_zone.form.type.province_choice.class">IR\Bundle\ZoneBundle\Form\Type\ProvinceChoiceType</parameter>
     </parameters>
 
     <services>
@@ -21,7 +22,13 @@
         <service id="ir_zone.form.type.province" class="%ir_zone.form.type.province.class%">
             <argument>%ir_zone.model.province.class%</argument>
             <tag name="form.type" alias="ir_zone_province" />
-        </service>                      
+        </service>  
+        
+         <!-- Province Choice Type -->
+        
+        <service id="ir_zone.form.type.province_choice" class="%ir_zone.form.type.province_choice.class%">
+            <tag name="form.type" alias="ir_zone_province_choice" />
+        </service>                                                
     </services>
 
 </container>

@@ -158,6 +158,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertParameter('ir_zone', 'ir_zone.form.type.zone');
         $this->assertParameter('ir_zone_country', 'ir_zone.form.type.country');
         $this->assertParameter('ir_zone_province', 'ir_zone.form.type.province');
+        $this->assertHasDefinition('ir_zone.form.type.province_choice');
     }     
     
     public function testZoneLoadFormClass()
@@ -167,6 +168,7 @@ class IRZoneExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertParameter('acme_zone', 'ir_zone.form.type.zone');
         $this->assertParameter('acme_zone_country', 'ir_zone.form.type.country');
         $this->assertParameter('acme_zone_province', 'ir_zone.form.type.province');
+        $this->assertHasDefinition('ir_zone.form.type.province_choice');
     }    
    
     public function testZoneLoadFormNameWithDefaults()
