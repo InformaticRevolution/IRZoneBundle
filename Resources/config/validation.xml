@@ -39,9 +39,6 @@
             <constraint name="NotBlank">
                 <option name="message">ir_zone.country.iso_code.blank</option> 
                 <option name="groups">Country</option>                       
-            </constraint>            
-            <constraint name="Country">
-                <option name="message">ir_zone.country.iso_code.invalid</option> 
             </constraint>
         </property>                                                   
     </class>
