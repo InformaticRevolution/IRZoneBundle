@@ -67,7 +67,7 @@ interface CountryInterface
      * 
      * @param ZoneInterface|null $zone
      */
-    public function setZone(ZoneInterface $zone = zone);
+    public function setZone(ZoneInterface $zone = null);
 
     /**
      * Returns all the provinces.
