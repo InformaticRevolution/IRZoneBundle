@@ -40,7 +40,7 @@
     </table>
 </div>
 
-<!-- PROVINCES -->
+<!-- Provinces -->
 
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -55,6 +55,7 @@
             <tr>
                 <th>{{ 'ir_zone.admin.province.name'|trans }}</th>
                 <th>{{ 'ir_zone.admin.province.code'|trans }}</th>
+                <th>{{ 'ir_zone.admin.province.zone'|trans }}</th>
                 <th>{{ 'ir_zone.admin.province.enabled'|trans }}</th>
                 <th></th>
             </tr>
@@ -64,6 +65,7 @@
             <tr>
                 <td>{{ province.name }}</td>
                 <td>{{ province.code }}</td>
+                <td>{{ province.zone }}</td>
                 <td>
                     <i class="glyphicon glyphicon-{% if province.enabled %}ok{% else %}remove{% endif %}"></i>
                 </td>

@@ -55,6 +55,7 @@ ir_zone:
         province:   
             name: Nom
             code: Code
+            zone: Zone
             enabled: Activé
 
             list:
