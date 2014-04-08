@@ -15,9 +15,6 @@ ir_zone:
             blank: Veuillez saisir le code ISO du pays
             invalid: Code ISO invalide
             
-        zone:
-            unset: Veuillez sélectionner une zone
-            
     province:
         name:
             blank: Veuillez saisir le nom de l'état
@@ -25,7 +22,4 @@ ir_zone:
             long: Le nom de l'état ne doit pas comporter plus de {{ limit }} caractères  
             
         code: 
-            blank: Veuillez saisir le code de l'état
-            
-        zone:
-            unset: Veuillez sélectionner une zone            
+            blank: Veuillez saisir le code de l'état       

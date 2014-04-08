@@ -77,9 +77,9 @@ interface ProvinceInterface
     /**
      * Sets the zone.
      * 
-     * @param ZoneInterface $zone
+     * @param ZoneInterface|null $zone
      */
-    public function setZone(ZoneInterface $zone);    
+    public function setZone(ZoneInterface $zone = null);    
     
     /**
      * Checks whether the province is enabled.

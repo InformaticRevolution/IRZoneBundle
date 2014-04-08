@@ -43,14 +43,7 @@
             <constraint name="Country">
                 <option name="message">ir_zone.country.iso_code.invalid</option> 
             </constraint>
-        </property>   
-        
-        <property name="zone">
-            <constraint name="NotNull">
-                <option name="message">ir_zone.country.zone.unset</option> 
-                <option name="groups">Country</option>                       
-            </constraint>
-        </property>                                                    
+        </property>                                                   
     </class>
 
     <class name="IR\Bundle\ZoneBundle\Model\Province">
@@ -73,13 +66,6 @@
                 <option name="message">ir_zone.province.code.blank</option> 
                 <option name="groups">Province</option>                       
             </constraint>
-        </property>    
-        
-        <property name="zone">
-            <constraint name="NotNull">
-                <option name="message">ir_zone.province.zone.unset</option> 
-                <option name="groups">Province</option>                       
-            </constraint>
-        </property>                                                                                                        
+        </property>                                                                                                      
     </class>
 </constraint-mapping>        

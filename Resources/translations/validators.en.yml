@@ -13,10 +13,7 @@ ir_zone:
             
         iso_code: 
             blank: Please enter the country ISO code
-            invalid: Invalid ISO code
-            
-        zone:
-            unset: Please select a zone    
+            invalid: Invalid ISO code   
             
     province:
         name:
@@ -25,7 +22,4 @@ ir_zone:
             long: Province name must not be longer than {{ limit }} characters 
             
         code: 
-            blank: Please enter the province code        
-            
-        zone:
-            unset: Please select a zone            
+            blank: Please enter the province code         

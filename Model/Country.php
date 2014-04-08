@@ -111,7 +111,7 @@ abstract class Country implements CountryInterface
     /**
      * {@inheritdoc}
      */
-    public function setZone(ZoneInterface $zone)
+    public function setZone(ZoneInterface $zone = null)
     {
         $this->zone = $zone;
     }
