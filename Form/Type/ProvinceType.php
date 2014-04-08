@@ -50,7 +50,8 @@ class ProvinceType extends AbstractType
             ->add('code', null, array(                 
                 'label' => 'ir_zone.form.province.code'
             ))         
-            ->add('zone', 'ir_zone_choice', array(                 
+            ->add('zone', 'ir_zone_choice', array(  
+                'empty_value' => '',
                 'label' => 'ir_zone.form.province.zone'
             ))                 
             ->add('enabled', null, array(                 

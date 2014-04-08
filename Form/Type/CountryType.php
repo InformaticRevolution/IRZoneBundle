@@ -50,7 +50,8 @@ class CountryType extends AbstractType
             ->add('isoCode', null, array(                 
                 'label' => 'ir_zone.form.country.iso_code'
             ))
-            ->add('zone', 'ir_zone_choice', array(                 
+            ->add('zone', 'ir_zone_choice', array(    
+                'empty_value' => '',
                 'label' => 'ir_zone.form.country.zone'
             ))                
             ->add('enabled', null, array(                 
