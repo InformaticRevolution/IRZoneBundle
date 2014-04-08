@@ -11,6 +11,9 @@
 
 namespace IR\Bundle\ZoneBundle\Form\Type;
 
+use Doctrine\ORM\EntityRepository;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
 /**
  * Country Entity Choice Type.
  * 
@@ -18,6 +21,23 @@ namespace IR\Bundle\ZoneBundle\Form\Type;
  */
 class CountryEntityChoiceType extends CountryChoiceType
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        parent::setDefaultOptions($resolver);
+        
+        $resolver->setDefaults(array(
+            'query_builder' => function(EntityRepository $er) {
+                return $er->createQueryBuilder('c')
+                    ->where('c.enabled = :enabled')
+                    ->setParameter('enabled', true)
+                    ->orderBy('c.name', 'ASC');
+            },
+        ));
+    }   
+    
     /**
      * {@inheritdoc}
      */
