@@ -39,8 +39,12 @@
             <constraint name="NotBlank">
                 <option name="message">ir_zone.country.iso_code.blank</option> 
                 <option name="groups">Country</option>                       
-            </constraint>
-        </property>                                                   
+            </constraint>          
+        </property> 
+        
+        <property name="provinces">
+            <constraint name="Valid" />
+        </property>                                                                                                            
     </class>
 
     <class name="IR\Bundle\ZoneBundle\Model\Province">
