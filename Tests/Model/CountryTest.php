@@ -29,6 +29,16 @@ class CountryTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Doctrine\Common\Collections\Collection', $country->getProvinces());
     }     
     
+    public function testHasProvinces()
+    {
+        $country = $this->getCountry();
+        $province = $this->getProvince();
+        
+        $this->assertFalse($country->hasProvinces());
+        $country->addProvince($province);
+        $this->assertTrue($country->hasProvinces());
+    }    
+    
     public function testAddProvince()
     {
         $country = $this->getCountry();

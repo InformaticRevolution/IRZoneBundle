@@ -70,6 +70,13 @@ interface CountryInterface
     public function setZone(ZoneInterface $zone = null);
 
     /**
+     * Checks whether country has one ore more provinces.
+     *
+     * @return Boolean
+     */
+    public function hasProvinces();    
+    
+    /**
      * Returns all the provinces.
      *
      * @return Collection

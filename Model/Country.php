@@ -119,6 +119,14 @@ abstract class Country implements CountryInterface
     /**
      * {@inheritdoc}
      */
+    public function hasProvinces()
+    {
+        return !$this->provinces->isEmpty();        
+    }      
+    
+    /**
+     * {@inheritdoc}
+     */
     public function getProvinces()
     {
         return $this->provinces;
