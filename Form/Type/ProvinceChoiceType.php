@@ -2,9 +2,9 @@
 
 /*
  * This file is part of the IRZoneBundle package.
- * 
+ *
  * (c) Julien Kirsch <informatic.revolution@gmail.com>
- * 
+ *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
@@ -25,13 +25,13 @@ class ProvinceChoiceType extends AbstractType
 {
     /**
      * {@inheritdoc}
-     */       
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {   
+    {
         $choiceList = function (Options $options) {
-            return new ObjectChoiceList($options['country']->getProvinces());
-        };        
-        
+            return new ObjectChoiceList($options['country']->getProvinces(), null, array(), null, 'id');
+        };
+
         $resolver
             ->setDefaults(array(
                 'choice_list' => $choiceList
@@ -41,22 +41,22 @@ class ProvinceChoiceType extends AbstractType
             ))
             ->addAllowedTypes(array(
                 'country' => 'IR\Bundle\ZoneBundle\Model\CountryInterface'
-            )); 
-    } 
-    
+            ));
+    }
+
     /**
      * {@inheritdoc}
      */
     public function getParent()
     {
         return 'choice';
-    }    
-    
+    }
+
     /**
      * {@inheritdoc}
-     */        
+     */
     public function getName()
     {
         return 'ir_zone_province_choice';
-    }    
+    }
 }
